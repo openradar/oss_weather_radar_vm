@@ -19,7 +19,8 @@ Vagrant.configure("2") do |config|
   # provision machine with open source radar software.
   #config.vm.provision :shell, :path => "bootstrap.sh"
   config.vm.provision :shell, :privileged => false, :path => "user_install_miniconda.sh"
-  config.vm.provision :shell, :privileged => false, :path => "user_install_pyart.sh"
-  config.vm.provision :shell, :privileged => false, :path => "user_install_wradlib.sh"
+  #config.vm.provision :shell, :privileged => false, :path => "user_install_pyart.sh"
+  #config.vm.provision :shell, :privileged => false, :path => "user_install_wradlib.sh"
+  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad.sh"
 
 end
