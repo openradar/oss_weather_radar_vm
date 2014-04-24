@@ -21,6 +21,16 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "user_install_miniconda.sh"
   #config.vm.provision :shell, :privileged => false, :path => "user_install_pyart.sh"
   #config.vm.provision :shell, :privileged => false, :path => "user_install_wradlib.sh"
-  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad.sh"
+  
+  # Baltrad
+  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_common.sh"
+  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_hlhdf.sh"
+  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_rave.sh"
+  
+  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_beamb.sh"
+  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_bropo.sh"
+  
+  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_rave_gmap.sh"
+  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_baltrad_wrwp.sh"
 
 end
