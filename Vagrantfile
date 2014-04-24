@@ -17,19 +17,32 @@ Vagrant.configure("2") do |config|
   config.ssh.forward_agent = true
   
   # provision machine with open source radar software.
-  #config.vm.provision :shell, :path => "bootstrap.sh"
-  config.vm.provision :shell, :privileged => false, :path => "user_install_miniconda.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "user_install_pyart.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "user_install_wradlib.sh"
+  
+  # Python environment, miniconda
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_miniconda.sh"
+
+  # Py-ART
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
+  
+  # wradlib
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
   
   # Baltrad
-  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_common.sh"
-  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_hlhdf.sh"
-  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_rave.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_hlhdf.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave.sh" 
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_beamb.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bropo.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_baltrad_wrwp.sh"
+
+  # cache conda packages
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cache_conda_pkgs.sh"
   
-  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_beamb.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_bropo.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_rave_gmap.sh"
-  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_baltrad_wrwp.sh"
+  # copy VM scripts
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/copy_guest_scripts.sh"
+
+  # cleanup
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cleanup.sh" 
 
 end

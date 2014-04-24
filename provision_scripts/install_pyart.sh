@@ -9,6 +9,3 @@ sudo apt-get install -qq libfontconfig1
 conda install --yes -c jjhelmus pyart
 conda install --yes nose
 conda install --yes basemap
-
-# copy script which runs unit tests
-cp /vagrant/vendor/test_pyart.sh ~/

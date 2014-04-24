@@ -14,4 +14,3 @@ cp /vagrant/vendor/conda_pkgs/* ~/miniconda/pkgs/
 
 # Install core Scientific Python packages and IPython notebook
 conda install --yes numpy scipy matplotlib ipython ipython-notebook
-cp /vagrant/vendor/start_notebook.sh ~/
