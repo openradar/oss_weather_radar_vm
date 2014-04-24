@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   # Baltrad
   config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_common.sh"
   config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_hlhdf.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_rave.sh"
+  config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_rave.sh"
   
   #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_beamb.sh"
   #config.vm.provision :shell, :privileged => false, :path => "user_install_baltrad_bropo.sh"
