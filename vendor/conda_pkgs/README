@@ -1,0 +1,3 @@
+This directory holds conda packages that were downloaded during VM creation.
+Keeping file here will save bandwidth as these files will not need to be
+downloaded again.
