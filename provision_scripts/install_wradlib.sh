@@ -14,7 +14,7 @@ mkdir tmp
 cd tmp
 sudo apt-get install -qq unzip
 conda install --yes setuptools
-wget http://bitbucket.org/wradlib/wradlib/get/default.zip
+wget --no-check-certificate http://bitbucket.org/wradlib/wradlib/get/default.zip
 unzip default.zip
 cd wradlib-wradlib*
 python setup.py install
