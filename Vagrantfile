@@ -23,6 +23,9 @@ Vagrant.configure("2") do |config|
   
   # Python environment, miniconda
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_miniconda.sh"
+    
+  # BUFR
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_bufr.sh"
 
   # Py-ART
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
