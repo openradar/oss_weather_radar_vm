@@ -8,6 +8,11 @@ export PATH="/home/vagrant/miniconda/bin:$PATH"
 sudo apt-get install -qq libfontconfig1
 conda install --yes h5py netcdf4 numpydoc gdal
 
+# hack to get osgeo working correctly until Continuum ships gdal data with
+# their gdal package
+conda install --yes -c jjhelmus gdal-data
+echo "export GDAL_DATA=\"/home/vagrant/miniconda/share/gdal\"" >> ~/.bashrc
+
 # Install wradlib from source
 cd ~
 mkdir tmp
