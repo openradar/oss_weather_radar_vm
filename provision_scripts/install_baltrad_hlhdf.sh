@@ -16,7 +16,8 @@ cd hlhdf/
 ./configure --prefix=/opt/baltrad/hlhdf --with-hdf5=/home/vagrant/miniconda/include,/home/vagrant/miniconda/lib
 make
 make test
-sudo make install
+make install
+echo "export PATH=\"\$PATH:/opt/baltrad/hlhdf/bin\"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/hlhdf/lib\"" >> ~/.bashrc
 
 # HACK, I believe this should be done during make install

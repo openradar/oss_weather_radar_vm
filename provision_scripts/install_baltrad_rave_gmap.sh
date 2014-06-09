@@ -12,7 +12,7 @@ cd ~
 cd tmp
 git clone --depth=1 git://git.baltrad.eu/GoogleMapsPlugin.git
 cd GoogleMapsPlugin/
-sudo python setup.py install --prefix=/opt/baltrad
+python setup.py install --prefix=/opt/baltrad
 
 # HACK the setup.py files need to add the line
 # import distutils.sysconfig

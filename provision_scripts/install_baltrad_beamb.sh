@@ -15,5 +15,6 @@ cd beamb/
 ./configure --prefix=/opt/baltrad/beamb --with-rave=/opt/baltrad/rave
 make
 make test
-sudo make install
+make install
+echo "export PATH=\"\$PATH:/opt/baltrad/beamb/bin\"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/beamb/lib\"" >> ~/.bashrc
