@@ -23,9 +23,10 @@ cd ~
 cd tmp
 git clone --depth 1 git://git.baltrad.eu/baltrad-wrwp.git
 cd baltrad-wrwp/
-./configure --prefix=/opt/baltrad/baltrad-wrwp --with-rave=/opt/baltrad/rave --with-blas=/usr/lib/atlas-base/atlas
+./configure --prefix=/opt/baltrad/baltrad-wrwp --with-rave=/opt/baltrad/rave --with-blas=/usr/lib --with-cblas=/usr/lib --with-lapack=/usr/lib --with-lapacke=/usr/include,/usr/lib
 make
 make test
-sudo make install
+make install
+echo "export PATH=\"\$PATH:/opt/baltrad/baltrad-wrwp/bin\"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/baltrad-wrwp/lib\"" >> ~/.bashrc
 echo /opt/baltrad/baltrad-wrwp/share/wrwp/pywrwp/ > ~/miniconda/lib/python2.7/site-packages/baltrad_wrwp.pth

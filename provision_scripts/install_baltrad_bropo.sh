@@ -13,8 +13,9 @@ cd ~
 cd tmp
 git clone --depth 1 git://git.baltrad.eu/bropo.git
 cd bropo/
-./configure --prefix=/opt/baltrad/bropo
+./configure --prefix=/opt/baltrad/bropo --with-rave=/opt/baltrad/rave
 make
 make test
-sudo make install
+make install
+echo "export PATH=\"\$PATH:/opt/baltrad/bropo/bin\"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/bropo/lib\"" >> ~/.bashrc
