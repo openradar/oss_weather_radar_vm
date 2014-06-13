@@ -3,7 +3,7 @@ set -x
 
 # Global Baltrad setup
 sudo apt-get install -qq git
-sudo apt-get install apache2
+sudo apt-get install -qq apache2
 sudo mkdir /opt/baltrad
 sudo chown vagrant:vagrant /opt/baltrad
 sudo cp /vagrant/vendor/etc/apache2/apache2.conf /etc/apache2/apache2.conf
