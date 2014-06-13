@@ -16,6 +16,8 @@ Vagrant.configure("2") do |config|
   
   # forward the default IPython port
   config.vm.network "forwarded_port", guest: 8888, host: 8888
+  # forward the httpd port
+  config.vm.network "forwarded_port", guest: 80, host: 8080
   
   config.ssh.forward_agent = true
   
