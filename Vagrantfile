@@ -25,6 +25,9 @@ Vagrant.configure("2") do |config|
   
   # provision machine with open source radar software.
   
+  # Python environment, system
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
+  
   # Python environment, miniconda
   #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_miniconda.sh"
     
