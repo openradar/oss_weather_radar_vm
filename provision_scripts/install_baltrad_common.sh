@@ -10,9 +10,8 @@ mkdir tmp
 cd tmp
 
 wget --no-check-certificate https://keyczar.googlecode.com/files/keyczar-python-0.71d-09062013.tar.gz
-tar xvzf keyczar-python-0.71d-09062013.tar.gz
+tar xzf keyczar-python-0.71d-09062013.tar.gz
 cd keyczar-python
-/home/vagrant/miniconda/bin/python setup.py install
+sudo python setup.py install
 
 cd ../..
-echo "export LD_LIBRARY_PATH=/home/vagrant/miniconda/lib" >> ~/.bashrc
