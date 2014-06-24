@@ -3,7 +3,7 @@ set -x
 
 # Vagrant provision script for installing wradlib
 
-# Install wradlib depencies from conda packages
+# Install wradlib depencies 
 sudo apt-get install -qq libfontconfig1 python-numpydoc python-gdal python-h5py
 
 # Install wradlib from source

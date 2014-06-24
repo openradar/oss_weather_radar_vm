@@ -26,8 +26,6 @@ cd rave
 make
 make test
 make install
-# Hack as Ubuntu uses dist-packages for site-packages
-sudo echo "/opt/baltrad/rave/Lib" > rave.pth
-sudo cp rave.pth /usr/lib/python2.7/dist-packages/
+
 echo "export PATH=\"\$PATH:/opt/baltrad/rave/bin\"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/rave/lib\"" >> ~/.bashrc

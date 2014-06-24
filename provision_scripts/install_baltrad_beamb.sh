@@ -16,9 +16,5 @@ make
 make test
 make install
 
-# Hack as Ubuntu uses dist-packages for site-packages
-sudo echo "/opt/baltrad/beamb/share/beamb/pybeamb" > pybeamb.pth
-sudo cp pybeamb.pth /usr/lib/python2.7/dist-packages/
-
 echo "export PATH=\"\$PATH:/opt/baltrad/beamb/bin\"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/beamb/lib\"" >> ~/.bashrc

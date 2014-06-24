@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
   #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
   
   # wradlib
-  #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
   
   # Baltrad
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
@@ -44,16 +44,14 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave.sh" 
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_beamb.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bropo.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_baltrad_wrwp.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_baltrad_wrwp.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_finalize.sh"
 
-  # cache conda packages
-  #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cache_conda_pkgs.sh"
-  
   # copy VM scripts
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/copy_guest_scripts.sh"
 
   # cleanup
-  #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cleanup.sh" 
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cleanup.sh" 
 
 end

@@ -2,10 +2,9 @@
 set -x
 
 # Vagrant provision script for installing Baltrad baltrad_wrwp from source
-export PATH="/home/vagrant/miniconda/bin:$PATH"
 
 # install dependencies
-export LD_LIBRARY_PATH=/home/vagrant/miniconda/lib:/opt/baltrad/hlhdf/lib:/opt/baltrad/rave/lib
+export LD_LIBRARY_PATH=/opt/baltrad/hlhdf/lib:/opt/baltrad/rave/lib
 sudo apt-get install -qq libatlas-base-dev
 sudo apt-get install -qq liblapacke-dev
 
@@ -29,4 +28,4 @@ make test
 make install
 echo "export PATH=\"\$PATH:/opt/baltrad/baltrad-wrwp/bin\"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/baltrad-wrwp/lib\"" >> ~/.bashrc
-echo /opt/baltrad/baltrad-wrwp/share/wrwp/pywrwp/ > ~/miniconda/lib/python2.7/site-packages/baltrad_wrwp.pth
+echo /opt/baltrad/baltrad-wrwp/share/wrwp/pywrwp/ > /usr/lib/python2.7/site-packages/baltrad_wrwp.pth
