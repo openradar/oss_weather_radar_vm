@@ -2,6 +2,7 @@
 set -x
 
 # cleanup the VM
-rm -rf ~/miniconda/pkgs/*
 cd ~
 sudo rm -rf tmp
+
+# TODO remove apt-cache to save space.

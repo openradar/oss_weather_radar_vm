@@ -3,6 +3,10 @@
 
 Vagrant.configure("2") do |config|
   
+  # Configure cached packages to be shared between instances of the same base box.
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+  end
   config.vm.box = "trusty64"
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
   # The .box file can also be specified as a file on the local machine,
@@ -21,9 +25,9 @@ Vagrant.configure("2") do |config|
   
   # provision machine with open source radar software.
   
-  # Python environment, miniconda
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_miniconda.sh"
-    
+  # Python environment, system
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
+  
   # BUFR
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_bufr.sh"
 
@@ -42,10 +46,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bropo.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_baltrad_wrwp.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_finalize.sh"
 
-  # cache conda packages
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cache_conda_pkgs.sh"
-  
   # copy VM scripts
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/copy_guest_scripts.sh"
 

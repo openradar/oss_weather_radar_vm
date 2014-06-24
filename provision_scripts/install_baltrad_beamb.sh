@@ -2,10 +2,9 @@
 set -x
 
 # Vagrant provision script for installing Baltrad beamb component
-export PATH="/home/vagrant/miniconda/bin:$PATH"
 
 # install dependencies
-export LD_LIBRARY_PATH=/home/vagrant/miniconda/lib:/opt/baltrad/hlhdf/lib:/opt/baltrad/rave/lib
+export LD_LIBRARY_PATH=/opt/baltrad/hlhdf/lib:/opt/baltrad/rave/lib
 
 # install beamb from source
 cd ~
@@ -16,5 +15,6 @@ cd beamb/
 make
 make test
 make install
+
 echo "export PATH=\"\$PATH:/opt/baltrad/beamb/bin\"" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/beamb/lib\"" >> ~/.bashrc
