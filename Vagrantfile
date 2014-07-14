@@ -38,6 +38,7 @@ Vagrant.configure("2") do |config|
   
   # wradlib
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib_short_course.sh"
   
   # Baltrad
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
