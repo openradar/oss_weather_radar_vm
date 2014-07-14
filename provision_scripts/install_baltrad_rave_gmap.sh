@@ -29,3 +29,4 @@ mkdir /opt/baltrad/rave_gmap/web/data
 cp /vagrant/vendor/opt/baltrad/rave_gmap/web/data/eesur_gmaps.tgz /opt/baltrad/rave_gmap/web/data/.
 cd /opt/baltrad/rave_gmap/web/data
 tar xzf eesur_gmaps.tgz
+rm eesur_gmaps.tgz
