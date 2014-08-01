@@ -29,6 +29,7 @@ Vagrant.configure("2") do |config|
   
   # Python environment, system
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyshp.sh"
   
   # BUFR
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_bufr.sh"
