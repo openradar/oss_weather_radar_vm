@@ -1,23 +1,19 @@
 #!/usr/bin/env bash
 set -x
 
-# Vagrant provision script for installing Baltrad rave component
+# Vagrant provision script for installing BALTRAD RAVE component
 
-# Install rave depencies
+# Install RAVE depencies
 sudo apt-get install -qq libproj0
 sudo apt-get install -qq proj-bin
 sudo apt-get install -qq libproj-dev
 sudo apt-get install -qq expat
 sudo apt-get install -qq libexpat-dev
-
-# hack to a Python Makefile for rave's ./configure to use 
 sudo apt-get install -qq libpython2.7-dbg
-sudo mkdir /usr/lib/python2.7/config
-sudo cp /usr/lib/python2.7/config-x86_64-linux-gnu/Makefile /usr/lib/python2.7/config/
 
 export LD_LIBRARY_PATH=/opt/baltrad/hlhdf/lib
 
-# Install rave from source
+# Install RAVE from source
 cd ~
 cd tmp
 git clone --depth=1 git://git.baltrad.eu/rave.git
