@@ -6,6 +6,8 @@ sudo apt-get install -qq git
 sudo mkdir /opt/baltrad
 sudo chown vagrant:vagrant /opt/baltrad
 
+sudo pip install jprops
+
 # make a site-packages directory for BALTRAD to install into
 # see discussion in install_baltrad_finalize.sh for details
 sudo mkdir /usr/lib/python2.7/site-packages
