@@ -51,6 +51,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_baltrad_wrwp.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_finalize.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_short_course.sh"
   
   # Interoperability demo
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad2wradlib_demo.sh"
