@@ -56,6 +56,7 @@ Vagrant.configure("2") do |config|
   
   # Interoperability demo
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad2wradlib_demo.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart2baltrad_course.sh"
 
   # copy VM scripts
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/copy_guest_scripts.sh"
