@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-get -x
+set -x
 # Get the Py-ART notebooks from GitHub
 cd ~
 #install git just in case
