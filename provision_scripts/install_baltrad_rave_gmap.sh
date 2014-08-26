@@ -11,9 +11,17 @@ sudo cp /vagrant/vendor/etc/apache2/apache2.conf /etc/apache2/apache2.conf
 sudo cp /vagrant/vendor/etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 sudo service apache2 restart
 
+# Seemingly unnecessary dependency: Imaging 1.1.7
+# Because stock pillow in Ubuntu does not support PNG properly.
+cd ~/tmp
+wget --no-check-certificate http://git.baltrad.eu/blt_dependencies/Imaging-1.1.7.tar.gz .
+tar xvzf Imaging-1.1.7.tar.gz
+cd Imaging-1.1.7
+sudo cp /vagrant/vendor/setup.py.Imaging-1.1.7-tweaked setup.py
+sudo python setup.py install
+
 # install GoogleMapsPlugin from source
-cd ~
-cd tmp
+cd ~/tmp
 git clone --depth=1 git://git.baltrad.eu/GoogleMapsPlugin.git
 cd GoogleMapsPlugin/
 python setup.py install --prefix=/opt/baltrad
