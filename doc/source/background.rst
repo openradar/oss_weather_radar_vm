@@ -19,7 +19,7 @@ Just :doc:`get started quickly <quickstart>` with our readily-built VM appliance
 Forget platform issues
 ----------------------
 
-For various software packages, different operating systems might have different issues, or not being supported at all. Windows users in particular
+For various software packages, different operating systems might have different issues, or are not being supported at all. Windows users in particular
 will know that scientific software packages in Atmospheric Sciences are often supported for Linux only.
 
 The VM can be run on any platform by using VirtualBox. This way, you do not have to worry about platform support issues.
@@ -29,7 +29,7 @@ Reproducibility
 --------------- 
 
 The concept of reproducibility is at the very heart of the VM. It is not just a convenient tool. 
-It gurantees comparable and reproducible result anywhere it is run. Distribute it among colleagues or students: same input, same result. 
+It gurantees comparable and reproducible results anywhere it is run. Distribute it among colleagues or students: same input, same result. 
 Think about the possiblities in teaching, but also in scientific peer review.
 
 
