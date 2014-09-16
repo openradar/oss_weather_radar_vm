@@ -2,8 +2,8 @@
 Towards Cross-Platform Weather Radar Science
 ============================================
 
-...by introducing a community-based and open Virtual Machine
-------------------------------------------------------------
+...by introducing a community-based and open Virtual Machine.
+-------------------------------------------------------------
 
 In the recent years, various Open Source Software (OSS) tools have become available 
 to the weather radar community (see `here <http://dx.doi.org/10.1175/BAMS-D-13-00240.1>`_).
@@ -20,8 +20,6 @@ Quicklinks
 :doc:`Get me started as quickly as possible! <quickstart>`
 
 :doc:`Learn about the features of the VM! <features>`
-
-:doc:`How to build the VM from source? <build>`
 
 
 .. image:: images/cover_image.png
