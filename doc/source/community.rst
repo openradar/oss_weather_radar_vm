@@ -4,22 +4,18 @@ Community
 Contribute via Pull Requests
 ----------------------------
 
-...
+Do you want to modify the VM? Add a new software? Provide a recipe and data?
+
+Fork the `repository <https://github.com/openradar/oss_weather_radar_vm>`_, add your changes and issue a Pull Request.
 
 
 Raise an issue
 --------------
 
-Report bugs, request enhancements, make a proposal... `here <https://...>`_
+Report bugs, request enhancements, make a proposal... `here <https://github.com/openradar/oss_weather_radar_vm/issues>`_
 
 
-Question and answer: the user forum
+The user forum
 -----------------------------------
 
-Register to the mailing list `... <https://...>`_. 
-
-- Stay tuned about recent developments,
-
-- get help (often quickly),
-
-- provide help.
+*A user forum will be set up soon.*
