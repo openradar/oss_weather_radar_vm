@@ -39,6 +39,6 @@ Once you have logged into the VM, run the command
 Then open a browser window on your host machine and navigate to http://127.0.0.0:8888/tree.
 
 In order to get started, you can choose from a selection of course notebooks. 
-See :doc:`gere <courses>` for more details on available courses.
+See :doc:`here <courses>` for more details on available courses.
 
 
