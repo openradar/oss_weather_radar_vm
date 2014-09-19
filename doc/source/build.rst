@@ -9,7 +9,7 @@ can be installed.
 Requirements
 ------------
 
-To create and run this VM you will need to install
+To create and run this VM you need to install
 `VirtualBox <https://www.virtualbox.org/>`_ and `vagrant <http://www.vagrantup.com/>`_.  
 
 Download the source `here <https://github.com/openradar/oss_weather_radar_vm/archive/master.zip>`_.

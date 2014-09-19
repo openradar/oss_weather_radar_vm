@@ -13,13 +13,13 @@ Turn-key solution
 
 Skip nasty installation procedures and stop worrying about dependencies. 
 
-Just :doc:`get started quickly <quickstart>` with our readily-built VM appliances.
+Just :doc:`get started quickly <quickstart>` with readily-built VM appliances.
 
 
 Forget platform issues
 ----------------------
 
-For various software packages, different operating systems might have different issues, or are not being supported at all. Windows users in particular
+For various software packages, different operating systems might have particular issues, or may not be supported at all. Windows users in particular
 will know that scientific software packages in Atmospheric Sciences are often supported for Linux only.
 
 The VM can be run on any platform by using VirtualBox. This way, you do not have to worry about platform support issues.

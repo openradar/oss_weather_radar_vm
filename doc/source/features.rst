@@ -1,8 +1,8 @@
 Features
 ========
 
-This projects creates a Linux Virtual Machine image (VM) with a 
-number of open source weather radar software packages which can be run using VirtualBox 
+The Virtual Machine (VM) is based on Linux (Ubuntu) and comes with a 
+number of open source weather radar software packages. The VM can be run using VirtualBox 
 on most operating systems (Linux, Mac, Windows).
 
 Weather Radar Software
