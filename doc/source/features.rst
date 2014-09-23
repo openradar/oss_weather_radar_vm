@@ -14,6 +14,8 @@ Weather Radar Software
 
 `wradlib <http://wradlib.bitbucket.org>`_
 
+`Radx <http://www.ral.ucar.edu/projects/titan/docs/radial_formats/radx.html>`_
+
 
 Python
 ------
