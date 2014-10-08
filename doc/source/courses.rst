@@ -16,8 +16,8 @@ From here, you can browse through the available IPython notebooks.
 
 You can also access the course repositories directly:
 
-* `Py-ART course <https://github.com/EVS-ATMOS/pyart_short_course>`_
-* `wradlib course <https://bitbucket.org/heisterm/wradlib_short_course>`_
+* `Py-ART course <https://github.com/openradar/pyart_short_course>`_
+* `wradlib course <http://wradlib_short_course.bitbucket.org>`_
 * `BALTRAD course <https://github.com/DanielMichelson/baltrad_short_course>`_
 * `BALTRAD 2 wradlib interoperability demo <https://github.com/heistermann/baltrad2wradlib>`_
 * `Py-ART 2 BALTRAD interoperability demo <https://github.com/jjhelmus/pyart2baltrad>`_

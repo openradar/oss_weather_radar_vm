@@ -51,6 +51,22 @@ The username and password for this VM is 'vagrant' and 'vagrant'.
 To stop and delete the VM use ``vagrant destroy``.
 
 
+Export the VM as an applicance
+------------------------------
+
+In order to create a VM image (appliance) for distribution, you need to
+follow these steps:
+
+* Bring the VM up using ``vagrant up``;
+* Power off the VM using ``vagrant halt``;
+* From the VirtualBox Manager, select the powered off VM,
+  go into the settings and remove all shared folders;
+* Under Settings, you can also choose whether to export a 32-bit or 64-bit Ubuntu applicance;
+* Still in the Manager from the File Menu, Choose `Export Appliance`,
+  and follow the Wizard to export the VM;
+* Writing the ova file may take a minute or two.
+
+
 
 
 
