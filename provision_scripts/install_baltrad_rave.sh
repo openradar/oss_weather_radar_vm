@@ -15,6 +15,9 @@ export LD_LIBRARY_PATH=/opt/baltrad/hlhdf/lib
 
 # Install RAVE from source
 cd ~
+if ! [ -d tmp ]; then
+mkdir tmp
+fi
 cd tmp
 git clone --depth=1 git://git.baltrad.eu/rave.git
 cd rave
@@ -23,5 +26,9 @@ make
 make test
 make install
 
-echo "export PATH=\"\$PATH:/opt/baltrad/rave/bin\"" >> ~/.bashrc
-echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/rave/lib\"" >> ~/.bashrc
+grep -l rave ~/.bashrc
+if [ $? == 1 ] ;
+then 
+echo "export PATH=\"\$PATH:/opt/baltrad/rave/bin\"" >> ~/.bashrc;
+echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/rave/lib\"" >> ~/.bashrc;
+fi

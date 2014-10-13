@@ -8,7 +8,7 @@ on most operating systems (Linux, Mac, Windows).
 Weather Radar Software
 ----------------------
 
-`BALTRAD <http://baltrad.eu/>`_
+`BALTRAD <http://git.baltrad.eu/>`_
 
 `Py-ART <http://arm-doe.github.io/pyart/>`_
 
@@ -21,7 +21,7 @@ Python
 ------
 
 The VM comes with a scientific Python stack, including the most important Python Packages
-for scientific computing (numpy, scipy and many more). The VM also contains `IPython <http://ipython.org/>`_.
+for scientific computing (NumPy, SciPy and many more). The VM also contains `IPython <http://ipython.org/>`_.
 
 A convenient way to use IPython is the `IPython notebook <http://ipython.org/notebook.html>`_. From the VM
 root directory, run

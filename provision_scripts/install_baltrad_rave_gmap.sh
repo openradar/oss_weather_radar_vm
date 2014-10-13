@@ -13,7 +13,11 @@ sudo service apache2 restart
 
 # Seemingly unnecessary dependency: Imaging 1.1.7
 # Because stock pillow in Ubuntu does not support PNG properly.
-cd ~/tmp
+cd ~
+if ! [ -d tmp ]; then
+mkdir tmp
+fi
+cd tmp
 wget --no-check-certificate http://git.baltrad.eu/blt_dependencies/Imaging-1.1.7.tar.gz .
 tar xvzf Imaging-1.1.7.tar.gz
 cd Imaging-1.1.7
@@ -28,7 +32,7 @@ python setup.py install --prefix=/opt/baltrad
 # HACK the setup.py files need to add the line
 # import distutils.sysconfig
 # The .pth file is not copied because of this, manually create the file
-echo /opt/baltrad/rave_gmap/Lib/ > /usr/lib/python2.7/site-packages/rave_gmap.pth
+sudo echo /opt/baltrad/rave_gmap/Lib/ > /usr/lib/python2.7/site-packages/rave_gmap.pth
 
 # Add an amazing case!
 cp /vagrant/vendor/opt/baltrad/rave_gmap/web/smhi-areas.xml /opt/baltrad/rave_gmap/web/.

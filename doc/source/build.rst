@@ -19,10 +19,10 @@ Building
 
 After unpacking the source, create the VM using the command ``vagrant up``.
   
-Note that the base box, conda packages and other software is
+Note that the base box and other software is
 downloaded when the VM is created which may take a
 significant amount of time depending on connection speed.  
-The base box and conda packages are cached locally so that
+The base box and software packages are cached locally so that
 subsequent uses of ``vagrant up`` should complete much quicker
 (typically ~10 minutes).
 
