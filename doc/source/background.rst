@@ -1,7 +1,7 @@
 Background
 ==========
 
-In the recent years, more and more Open Source Software (OSS) packages have become available to the weather radar community 
+In recent years, more and more Open Source Software (OSS) packages have become available to the weather radar community 
 (see `here <http://dx.doi.org/10.1175/BAMS-D-13-00240.1>`_). Still, we have to admit that some barriers prevent us 
 from tapping the full potential of OSS, such as nasty installation procedures, platform dependency and support issues, and steep learning curves.
 
