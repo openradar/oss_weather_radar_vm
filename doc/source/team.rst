@@ -31,6 +31,12 @@ Thomas Pfaff (Blue Yonder, Germany)
 Kai Muehlbauer (University of Bonn, Germany)
 
 
+Team LROSE
+----------
+
+Mike Dixon (National Center for Atmospheric Research, USA)
+
+
 
 
 

@@ -51,6 +51,33 @@ The username and password for this VM is 'vagrant' and 'vagrant'.
 To stop and delete the VM use ``vagrant destroy``.
 
 
+Export the VM as an applicance
+------------------------------
 
+In order to create a VM image (appliance) for distribution, you need to
+follow these steps.
 
+**64-bit image**
 
+``$ vagrant up``
+
+``$ vagrant halt``
+
+Use the VirtualBox manager to remove the shared folders, and export the 64-bit image.
+For the latter, choose the *File* menu, then *Export Appliance*. Writing the ova file may take a minute or two.
+
+``$ vagrant destroy`` (completely removes the VM)
+
+**32-bit image**
+
+Edit ``Vagrantfile``: comment out lines 11-20, uncomment 24-30
+
+``$ vagrant up``
+
+``$ vagrant halt``
+
+Use the VirtualBox manager to remove the shared folders, and export the 32-bit image.
+
+``$ vagrant destroy``
+
+Load each VM into VirtualBox and test out the notebooks to verify that everything works.

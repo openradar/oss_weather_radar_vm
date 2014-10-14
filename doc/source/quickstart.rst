@@ -42,3 +42,11 @@ In order to get started, you can choose from a selection of course notebooks.
 See :doc:`here <courses>` for more details on available courses.
 
 
+Having any problems?
+--------------------
+
+There are a some known issues. Please see :doc:`here <knownissues>` how to address them.
+
+If you are experiencing any other problems, please `raise an issue <http://github.com/openradar/oss_weather_radar_vm/issues>`_.
+
+
