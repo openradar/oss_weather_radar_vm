@@ -5,7 +5,7 @@ set -x
 
 # Set version here
 #   see available versions here: https://www.eol.ucar.edu/software/radx
-VERSION=20140701
+VERSION=20141011
 
 
 # Install Radx depencies
