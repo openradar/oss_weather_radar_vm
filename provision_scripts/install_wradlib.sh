@@ -3,10 +3,12 @@ set -x
 
 # Vagrant provision script for installing wradlib
 
-# Install wradlib depencies 
+# Install wradlib depencies
+sudo pip install numpy 
 sudo apt-get install -qq libfontconfig1 python-numpydoc python-gdal python-h5py
-sudo pip install xmltodict
-sudo pip install importlib
+pip install -r requirements.txt
+#sudo pip install xmltodict
+#sudo pip install importlib
 
 # Install wradlib from source
 cd ~
