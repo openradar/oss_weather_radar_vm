@@ -5,8 +5,7 @@ set -x
 
 # Install wradlib depencies
 sudo pip install numpy 
-sudo apt-get install -qq libfontconfig1 python-numpydoc python-gdal python-h5py
-pip install -r requirements.txt
+sudo apt-get install -qq libfontconfig1 python-gdal python-h5py
 #sudo pip install xmltodict
 #sudo pip install importlib
 
@@ -18,6 +17,7 @@ sudo apt-get install -qq unzip
 wget --no-check-certificate http://bitbucket.org/wradlib/wradlib/get/default.zip
 unzip default.zip
 cd wradlib-wradlib*
+sudo pip install -r requirements.txt
 sudo python setup.py install
 cd ~
-sudo rm -r tmp
+sudo rm -r wradlib-wradlib*
