@@ -20,4 +20,4 @@ cd wradlib-wradlib*
 sudo pip install -r requirements.txt
 sudo python setup.py install
 cd ~
-sudo rm -r wradlib-wradlib*
+sudo rm -r tmp
