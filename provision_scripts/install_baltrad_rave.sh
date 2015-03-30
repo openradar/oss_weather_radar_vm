@@ -4,9 +4,10 @@ set -x
 # Vagrant provision script for installing BALTRAD RAVE component
 
 # Install RAVE depencies
-sudo apt-get install -qq libproj0
-sudo apt-get install -qq proj-bin
-sudo apt-get install -qq libproj-dev
+# Moved installation for some of these dependencies to install_baltrad_bbufr.sh
+#sudo apt-get install -qq libproj0
+#sudo apt-get install -qq proj-bin
+#sudo apt-get install -qq libproj-dev
 sudo apt-get install -qq expat
 sudo apt-get install -qq libexpat-dev
 sudo apt-get install -qq libpython2.7-dbg
