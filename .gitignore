@@ -1,2 +1,6 @@
 .vagrant
 doc/build
+log_built.txt
+log_built.zip
+.gitignore
+provision_scripts/install_bufr.sh

@@ -42,9 +42,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyshp.sh"
   
-  # BUFR
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_bufr.sh"
-
   # Py-ART
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart_notebooks.sh"
@@ -57,7 +54,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_hlhdf.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bbufr.sh"
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave.sh" 
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave.sh"  
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_beamb.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bropo.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
