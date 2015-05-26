@@ -15,6 +15,6 @@
   password.  In may be necessary to reboot the VM if nothing appears after a
   minute or so.
 * One you have logged into the VM, run the command `./start_notebook.sh`.  
-  Then open a browser window and navigate to http://127.0.0.0:8888/tree
+  Then open a browser window and navigate to http://127.0.0.1:8888/tree
 * At this point you should be able to minimize the VirtualBox Manager and
   the VM window.

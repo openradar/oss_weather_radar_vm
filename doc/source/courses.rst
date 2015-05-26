@@ -11,7 +11,7 @@ Once you have logged into the VM, run the command
 
 ``$ ./start_notebook.sh``.
 
-Then open a browser window on your host machine and navigate to http://127.0.0.0:8888/tree. 
+Then open a browser window on your host machine and navigate to http://127.0.0.1:8888/tree. 
 From here, you can browse through the available IPython notebooks.
 
 You can also access the course repositories directly:
