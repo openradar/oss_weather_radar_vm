@@ -38,7 +38,7 @@ Use
 ``$ ./start_notebook.sh`` 
 
 to start the IPython notebook server running on the VM. From the host visit 
-http://127.0.0.0:8888/tree to interact with the server.
+http://127.0.0.1:8888/tree to interact with the server.
 
 The VM can be suspeded using ``vagrant suspend`` or stopped using
 ``vagrant halt``.  The VM can also be paused from the VirtualBox GUI.
