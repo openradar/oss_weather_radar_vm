@@ -22,7 +22,4 @@ You can also access the course repositories directly:
 * `BALTRAD 2 wradlib interoperability demo <https://github.com/heistermann/baltrad2wradlib>`_
 * `Py-ART 2 BALTRAD interoperability demo <https://github.com/jjhelmus/pyart2baltrad>`_
 * `Radx course <https://github.com/heistermann/radx_short_course>`_ *(as yet very brief)*
-
-
-
-
+* `PyTMatrix course <https://github.com/DaveOri/tmatrix_course.git>`_

@@ -16,6 +16,8 @@ Weather Radar Software
 
 `Radx <http://www.ral.ucar.edu/projects/titan/docs/radial_formats/radx.html>`_
 
+`PyTMatrix <https://github.com/jleinonen/pytmatrix>`_
+
 
 Python
 ------
