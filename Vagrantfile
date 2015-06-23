@@ -59,6 +59,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bropo.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_wrwp.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_finalize.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_short_course.sh"
   
   # Radx
