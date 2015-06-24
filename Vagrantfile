@@ -65,6 +65,10 @@ Vagrant.configure("2") do |config|
   # Radx
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx_short_course.sh"
+
+  # PyTMatrix
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pytmatrix.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pytmatrix_short_course.sh"
   
   # Interoperability demo
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad2wradlib_demo.sh"
