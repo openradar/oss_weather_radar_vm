@@ -28,7 +28,7 @@ root directory, run
 
 ``$ ./start_notebook.sh``
 
-Open a browser on your host machine and navigate to http://127.0.0.0:8888/tree.
+Open a browser on your host machine and navigate to http://127.0.0.1:8888/tree.
 
 See :doc:`quickstart` for further infos.
 
