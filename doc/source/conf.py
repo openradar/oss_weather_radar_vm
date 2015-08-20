@@ -148,11 +148,11 @@ html_static_path = ['_static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
-html_sidebars = {
-   '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
-   'using/windows': ['windowssidebar.html', 'searchbox.html'],
-}
+html_sidebars = {}
+#html_sidebars = {
+#   '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
+#   'using/windows': ['windowssidebar.html', 'searchbox.html'],
+#}
 #html_sidebars = {
 #    '**': ['localtoc.html',]
 #}
