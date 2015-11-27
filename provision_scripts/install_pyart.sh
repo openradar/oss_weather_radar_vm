@@ -14,9 +14,9 @@ sudo apt-get install -qq flex
 cd ~
 mkdir tmp
 cd tmp
-wget ftp://trmm-fc.gsfc.nasa.gov/software/rsl-v1.44.tar.gz -O rsl-v1.44.tar.gz
-tar xfz rsl-v1.44.tar.gz
-cd rsl-v1.44/
+wget ftp://trmm-fc.gsfc.nasa.gov/software/rsl-v1.49.tar.gz -O rsl-v1.44.tar.gz
+tar xfz rsl-v1.49.tar.gz
+cd rsl-v1.49/
 ./configure
 make
 sudo make install
@@ -43,7 +43,6 @@ echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/cbc/lib\"" >> ~/.bashrc
 cd ~
 mkdir tmp
 cd tmp
-#git clone --depth=1 https://github.com/jjhelmus/pyart.git
 git clone --depth=1 https://github.com/ARM-DOE/pyart.git
 cd pyart
 sudo python setup.py install
