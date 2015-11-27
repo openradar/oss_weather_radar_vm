@@ -4,6 +4,7 @@ set -x
 # Vagrant provision script for installing BALTRAD GoogleMapsPlugin component
 
 # dependencies
+sudo apt-get install -qq libfreetype6-dev
 sudo apt-get install -qq apache2
 sudo apt-get install -qq php5
 sudo apt-get install -qq libapache2-mod-php5
@@ -21,6 +22,7 @@ cd tmp
 wget --no-check-certificate http://git.baltrad.eu/blt_dependencies/Imaging-1.1.7.tar.gz .
 tar xvzf Imaging-1.1.7.tar.gz
 cd Imaging-1.1.7
+sed -i -e 's/#include <freetype\//#include <freetype2\//g' _imagingft.c
 sudo cp /vagrant/vendor/setup.py.Imaging-1.1.7-tweaked setup.py
 sudo python setup.py install
 
