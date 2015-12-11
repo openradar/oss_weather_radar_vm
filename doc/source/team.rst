@@ -10,7 +10,7 @@ Team BALTRAD
 
 Anders Henja (HENJAB, Sweden)
 
-Daniel B. Michelson (Swedish Meteorological and Hydrological Institute, Sweden)
+Daniel B. Michelson (Environment and Climate Change Canada)
 
 
 Team Py-ART
