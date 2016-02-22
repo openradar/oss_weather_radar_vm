@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -x
 # Vagrant provision script for installing Radx
-VERSION=20150826
+VERSION=20160216
 
 ##############################################################################
 # Install from source
