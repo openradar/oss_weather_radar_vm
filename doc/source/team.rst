@@ -26,8 +26,6 @@ Team wradlib
 
 Maik Heistermann (University of Potsdam, Germany)
 
-Thomas Pfaff (Blue Yonder, Germany)
-
 Kai Muehlbauer (University of Bonn, Germany)
 
 
