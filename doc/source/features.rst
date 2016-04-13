@@ -12,7 +12,7 @@ Weather Radar Software
 
 `Py-ART <http://arm-doe.github.io/pyart/>`_
 
-`wradlib <http://wradlib.bitbucket.org>`_
+`wradlib <http://wradlib.org>`_
 
 `Radx <http://www.ral.ucar.edu/projects/titan/docs/radial_formats/radx.html>`_
 
