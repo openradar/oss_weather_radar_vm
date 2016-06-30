@@ -17,7 +17,6 @@ sudo apt-get install -qq unzip
 wget --no-check-certificate https://github.com/wradlib/wradlib/archive/master.zip
 unzip master.zip
 cd wradlib-master
-#sudo pip install -r requirements.txt
 sudo python setup.py install
 # copy course notebooks from wradlib distribution
 cp -r notebooks/ ~/wradlib_course/ 

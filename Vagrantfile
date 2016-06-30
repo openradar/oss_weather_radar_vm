@@ -40,16 +40,14 @@ Vagrant.configure("2") do |config|
   
   # Python environment, system
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyshp.sh"
-  
+    
   # Py-ART
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart_notebooks.sh"
   
   # wradlib
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
-  #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib_short_course.sh"
-  
+    
   # BALTRAD
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_hlhdf.sh"
@@ -71,7 +69,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pytmatrix_short_course.sh"
   
   # Interoperability demo
-  #config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad2wradlib_demo.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart2baltrad_course.sh"
 
   # copy VM scripts
