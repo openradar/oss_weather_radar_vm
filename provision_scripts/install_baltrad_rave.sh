@@ -22,6 +22,9 @@ fi
 cd tmp
 git clone --depth=1 git://git.baltrad.eu/rave.git
 cd rave
+sed -i -e 's/import jprops/#import jprops/g' Lib/rave_bdb.py
+sed -i -e 's/import jprops/#import jprops/g' Lib/rave_dom_db.py
+sed -i -e 's/from keyczar import keyczar/#from keyczar import keyczar/g' Lib/BaltradFrame.py
 ./configure --prefix=/opt/baltrad/rave --with-hlhdf=/opt/baltrad/hlhdf --with-proj=/usr/include,/usr/lib --with-expat=/usr/include,/lib/x86_64 --with-bufr=/opt/baltrad/bbufr --with-numpy=/usr/lib/python2.7/dist-packages/numpy/core/include/numpy/
 make
 make test
