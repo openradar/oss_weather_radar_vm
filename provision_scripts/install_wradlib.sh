@@ -22,6 +22,5 @@ mkdir wradlib_short_course
 cp -a tmp/wradlib/notebooks/ ~/wradlib_short_course/
 
 # Install wradlib data
-cd wradlib_short_course
 git clone --depth=1 https://github.com/wradlib/wradlib-data.git
-echo "export WRADLIB_DATA=~/wradlib_short_course/wradlib-data" >> ~/.profile
+echo "export WRADLIB_DATA=~/wradlib-data" >> ~/.profile
