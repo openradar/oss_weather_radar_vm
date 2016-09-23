@@ -14,15 +14,14 @@ var radar_products = {};
 
 var radar_option_list = new Array();
 
-//Product eesur_gmaps 
-radar_products['eesur_gmaps'] = new RadarProduct;
-radar_products['eesur_gmaps'].description = 'Sürgavere';
-radar_products['eesur_gmaps'].lon = 25.5187;
-radar_products['eesur_gmaps'].lat = 58.4823; 
-radar_products['eesur_gmaps'].zoom = 6;
-radar_products['eesur_gmaps'].nelon = 29.831;
-radar_products['eesur_gmaps'].nelat = 60.7361;
-radar_products['eesur_gmaps'].swlon = 21.2072;
-radar_products['eesur_gmaps'].swlat = 56.2306;
-radar_option_list[0] = 'eesur_gmaps';
+radar_products['cawkr_gmaps'] = new RadarProduct;
+radar_products['cawkr_gmaps'].description = 'King City, ON';
+radar_products['cawkr_gmaps'].lon = -79.57416;
+radar_products['cawkr_gmaps'].lat = 43.96388; 
+radar_products['cawkr_gmaps'].zoom = 6;
+radar_products['cawkr_gmaps'].nelon = -77.690089;
+radar_products['cawkr_gmaps'].nelat = 45.319843;
+radar_products['cawkr_gmaps'].swlon = -81.454030;
+radar_products['cawkr_gmaps'].swlat = 42.608139;
+radar_option_list[0] = 'cawkr_gmaps';
 

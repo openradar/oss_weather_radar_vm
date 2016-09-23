@@ -40,7 +40,7 @@ sudo echo /opt/baltrad/rave_gmap/Lib/ > /usr/lib/python2.7/site-packages/rave_gm
 cp /vagrant/vendor/opt/baltrad/rave_gmap/web/smhi-areas.xml /opt/baltrad/rave_gmap/web/.
 cp /vagrant/vendor/opt/baltrad/rave_gmap/web/products.js /opt/baltrad/rave_gmap/web/.
 mkdir /opt/baltrad/rave_gmap/web/data
-cp /vagrant/vendor/opt/baltrad/rave_gmap/web/data/eesur_gmaps.tgz /opt/baltrad/rave_gmap/web/data/.
+cp /vagrant/vendor/opt/baltrad/rave_gmap/web/data/cawkr_gmaps.tgz /opt/baltrad/rave_gmap/web/data/.
 cd /opt/baltrad/rave_gmap/web/data
-tar xzf eesur_gmaps.tgz
-rm eesur_gmaps.tgz
+tar xzf cawkr_gmaps.tgz
+rm cawkr_gmaps.tgz
