@@ -70,7 +70,7 @@ For the latter, choose the *File* menu, then *Export Appliance*. Writing the ova
 
 **32-bit image**
 
-Edit ``Vagrantfile``: comment out lines 11-20, uncomment 24-30
+Edit ``Vagrantfile``: comment out lines 11-20, uncomment 24-36
 
 ``$ vagrant up``
 
