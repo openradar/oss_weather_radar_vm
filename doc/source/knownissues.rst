@@ -9,7 +9,7 @@ keyboard mapping is weird. One way to fix it is to install ``console data``:
 
 If you're logged in the VM, call 
 
-``$apt-get install console-data`` 
+``$sudo apt-get install console-data`` 
 
 from the shell. During the installation process, you will be able to choose an appropriate keyboard layout.
 
