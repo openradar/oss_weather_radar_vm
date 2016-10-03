@@ -27,6 +27,12 @@ Vagrant.configure("2") do |config|
   #config.vm.provider "virtualbox" do |vb|
   #  vb.customize ["modifyvm", :id, "--hwvirtex", "off"]
   #  vb.customize ["modifyvm", :id, "--memory", "2048"]
+  #  ## You might need to uncomment the following if built times out after "default: SSH auth method: private key"
+  #  ## Change network card to PCnet-FAST III 
+  #  ## For NAT adapter
+  #  #vb.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
+  #  ## For host-only adapter
+  #  #vb.customize ["modifyvm", :id, "--nictype2", "Am79C973"]
   #end 
 
   # forward the default IPython port

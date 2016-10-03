@@ -4,7 +4,7 @@ Downloads
 Readily-built VM images
 -----------------------
 
-Download readily-built VM images `here <http://sourceforge.net/projects/openradarvm/files/openradarvm/>`_.
+Download readily-built VM images `here <http://tinyurl.com/OpenRadarVM>`_.
 
 Make sure you select the correct image for your system (32-bit or 64-bit built).
 
