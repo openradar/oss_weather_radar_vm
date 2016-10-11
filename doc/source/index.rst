@@ -32,6 +32,7 @@ Quicklinks
    quickstart
    downloads
    build
+   sharedir
    courses
    community
    team
