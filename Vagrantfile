@@ -57,8 +57,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
   
   # Py-ART
-  ##config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
-  ##config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart_notebooks.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart_notebooks.sh"
   
   # BALTRAD
   ##config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"

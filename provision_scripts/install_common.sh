@@ -5,3 +5,5 @@ set -x
 sudo apt-get update -qq
 sudo apt-get install -qq git
 sudo apt-get install -qq unzip
+sudo apt-get install -qq gfortran
+sudo apt-get install -qq libfontconfig1
