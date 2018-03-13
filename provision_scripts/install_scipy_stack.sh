@@ -2,7 +2,7 @@
 set -x
 
 # Vagrant provising script for installing a SciPy stack
-sudo apt-get update -qq
+##sudo apt-get update -qq -> moved to install_common.sh
 sudo apt-get install -qq python-pip python-dev
 sudo pip install -U pip
 sudo apt-get install -qq python-numpy python-scipy python-matplotlib cython

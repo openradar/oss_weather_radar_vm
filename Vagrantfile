@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
   # The .box file can also be specified as a file on the local machine,
   # comment the above config.vm.box line, uncomment and edit the next line.
-  #config.vm.box_url = "file:///home/jhelmus/projects/erad_tutorial/boxes/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  #config.vm.box_url = "file:///home/.../trusty-server-cloudimg-amd64-vagrant-disk1.box"
   
   # configure VM instance
   config.vm.provider "virtualbox" do |vb|
@@ -35,25 +35,31 @@ Vagrant.configure("2") do |config|
   #  #vb.customize ["modifyvm", :id, "--nictype2", "Am79C973"]
   #end 
 
-  # forward the default IPython port
+  # Forward the default Jupyter port
   config.vm.network "forwarded_port", guest: 8888, host: 8888
-  # forward the httpd port
+  # Forward the httpd port
   config.vm.network "forwarded_port", guest: 80, host: 8080
   
   config.ssh.forward_agent = true
   
-  # provision machine with open source radar software.
+  # Provision machine with open source radar software.
   
-  # Python environment, system
+  # Requirements not related to Python or a specific package
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_common.sh"
+  
+  # Python environment (system, not conda)
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
-    
-  # Py-ART
+  
+  # Python environment (conda)
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_conda.sh"
+  
+  # wradlib to conda
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
+  
+  # Py-ART to system Python and conda
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart_notebooks.sh"
   
-  # wradlib
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
-    
   # BALTRAD
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_hlhdf.sh"
@@ -70,7 +76,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx_short_course.sh"
 
-  # PyTMatrix
+  # PyTMatrix to system Python and conda
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pytmatrix.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pytmatrix_short_course.sh"
   

@@ -2,7 +2,7 @@
 set -x
 
 # Global BALTRAD setup
-sudo apt-get install -qq git
+##sudo apt-get install -qq git -> moved to install_common.sh
 sudo mkdir /opt/baltrad
 sudo chown vagrant:vagrant /opt/baltrad
 
