@@ -25,7 +25,7 @@ cd rave
 sed -i -e 's/import jprops/#import jprops/g' Lib/rave_bdb.py
 sed -i -e 's/import jprops/#import jprops/g' Lib/rave_dom_db.py
 sed -i -e 's/from keyczar import keyczar/#from keyczar import keyczar/g' Lib/BaltradFrame.py
-./configure --prefix=/opt/baltrad/rave --with-hlhdf=/opt/baltrad/hlhdf --with-proj=/usr/include,/usr/lib --with-expat=/usr/include,/lib/x86_64 --with-bufr=/opt/baltrad/bbufr --with-numpy=/usr/lib/python2.7/dist-packages/numpy/core/include/numpy/
+./configure --prefix=/opt/baltrad/rave --with-hlhdf=/opt/baltrad/hlhdf --with-proj=/usr/include,/usr/lib/x86_64-linux-gnu --with-expat=/usr/include,/usr/lib/x86_64-linux-gnu --with-bufr=/opt/baltrad/bbufr --with-numpy=/usr/lib/python2.7/dist-packages/numpy/core/include/numpy/ --with-netcdf=/usr/include,/usr/lib/x86_64-linux-gnu
 make
 make test
 make install

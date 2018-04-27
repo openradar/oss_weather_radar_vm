@@ -8,8 +8,8 @@ Vagrant.configure("2") do |config|
     config.cache.scope = :box
   end
   
-  config.vm.box = "bento/ubuntu-16.04"
-  #config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box = "debian/stretch64"
+  config.vm.box_url = "https://vagrantcloud.com/debian/boxes/stretch64/versions/9.2.0/providers/virtualbox.box"
   # The .box file can also be specified as a file on the local machine,
   # comment the above config.vm.box line, uncomment and edit the next line.
   #config.vm.box_url = "file:///home/.../trusty-server-cloudimg-amd64-vagrant-disk1.box"
