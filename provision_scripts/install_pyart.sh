@@ -19,7 +19,7 @@ sudo python setup.py install
 
 # and install to conda env
 source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/ && \
-    $CONDA_DIR/bin/conda install trmm_rsl --yes && \
+    $CONDA_DIR/bin/conda install trmm_rsl cartopy --yes && \
     $CONDA_DIR/bin/conda install arm_pyart --no-deps --yes
 cd ~
 
