@@ -4,7 +4,7 @@ set -x
 # Vagrant provision script for installing BALTRAD bropo component
 
 # dependencies
-sudo apt-get install -qq libpng12-dev
+sudo apt-get install -qq libpng-dev
 export LD_LIBRARY_PATH=/opt/baltrad/hlhdf/lib:/opt/baltrad/rave/lib
 
 # install bropo from source
