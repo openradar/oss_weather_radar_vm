@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -x
 
+# Debian dependency
+sudo apt-get install -qq -y curl
+
 # Configure environment
 CONDA_DIR=$HOME/miniconda
 RADARENV=openradar
