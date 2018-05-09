@@ -23,16 +23,27 @@ Python
 ------
 
 The VM comes with a scientific Python stack, including the most important Python Packages
-for scientific computing (NumPy, SciPy and many more). The VM also contains `IPython <http://ipython.org/>`_.
+for scientific computing (NumPy, SciPy and many more), and `jupyter <https://jupyter.org/>`_
+in order to run the course notebooks.
 
-A convenient way to use IPython is the `IPython notebook <http://ipython.org/notebook.html>`_. From the VM
-root directory, run
+See :doc:`quickstart` to see how to run ``jupyter`` notebooks on the VM.
 
-``$ ./start_notebook.sh``
+**Two Python distributions**
 
-Open a browser on your host machine and navigate to http://127.0.0.1:8888/tree.
+Right now, we are in a phase of transition in which some packages have already moved on
+to Python 3, while others still rely on Python 2 (see 
+`here <https://https://docs.python.org/3/howto/pyporting.html>`_ for some background).
 
-See :doc:`quickstart` for further infos.
+As a result, the VM, as of now, contains two Python distributions:
+
+- the system Python is 2.7, and the installation of Python packages is based on the Debian 9 (Stretch) package manager. The system Python is mainly used by the BALTRAD package.
+
+- the VM also contains `Miniconda with Python 3.6 <https://conda.io/miniconda.html>`_. Using the `conda <https://conda.io/docs/index.html>`_ package manager, we maintain a 3.6 ``conda`` Python environment that contains wradlib, Py-ART and PyTMatrix.
+
+As a result, the interoperability demos for BALTRAD, Py-ART, and wradlib are, as of now, not operational.
+We are working on a solution to integrate all packages in a unified Python environment, again.
+
+See :doc:`quickstart` to see how ``jupyter`` notebooks can be invoked in the two different Python environments.
 
 
 Webserver

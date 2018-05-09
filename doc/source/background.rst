@@ -36,5 +36,5 @@ Think about the possiblities in teaching, but also in scientific peer review.
 System integration
 ------------------
 
-The VM is a machine on its own, but you can easily connect any drives of your computer or network, or even run it in the cloud. 
+The VM is a machine on its own, but you can easily mount any drives of your computer or network, or even run it in the cloud. 
  

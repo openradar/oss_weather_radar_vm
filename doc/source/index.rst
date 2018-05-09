@@ -37,6 +37,7 @@ Quicklinks
    community
    team
    knownissues
+   changelog
    
 
 

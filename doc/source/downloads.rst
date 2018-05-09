@@ -5,10 +5,14 @@ Readily-built VM images
 -----------------------
 
 Download readily-built VM images `here <http://tinyurl.com/OpenRadarVM>`_.
-
-Make sure you select the correct image for your system (32-bit or 64-bit built).
-
 These images can be instantly run by using `VirtualBox <http://www.virtualbox.org>`_.
+
+.. warning::
+
+    We do no longer provide 32-bit images!
+
+We also do no longer support the 32-bit built process, but you might find some guidance :doc:`here <build>`
+on how to build a 32-bit image. 
 
 
 Download source

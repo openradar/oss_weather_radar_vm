@@ -41,18 +41,45 @@ In case you already have ``console-data`` installed, just execute::
 instead, and follow the same procedure.
 
 
+System Python vs. conda
+-----------------------
+
+The VM contains two Python distributions: ``Python 2.7`` that comes with Debian 9 (used by BALTRAD and Radx),
+and a ``Python 3.6`` `conda environment <https://conda.io/docs/index.html>`_ (used by Py-ART, wradlib, 
+and PyTMatrix). We tried to minimize conflicts between the two Python environments. Please see
+:doc:`quickstart` on how to launch ``jupyter`` notebooks in the different Python environments. 
+
+Still, a problem might occur in case a the metadata of a ``jupyter`` notebook refers to Python 2, although
+the notebook would require to be run from within the ``conda`` Python 3.6 environment. If your notebook
+fails and shows an active ``Python 2`` kernel, please switch manually to a ``Python 3`` kernal using the
+notebooks GUI. Alternatively, you can edit the notebooks metadata to refer to Python 3, and then restart
+the notebook.
+
+
+Using conda
+-----------
+
+In order to avoid conflicts with the system Python, we did not add ``conda`` to the ``PATH`` environment variable.
+If you want to execute ``conda`` commands on the VM, you need to make use of the environment variable ``$CONDA_DIR``
+which points to ``conda``'s installation directory. Instead of e.g. activating the conda environment ``openradar`` via 
+
+``$ source activate openradar``
+
+please use
+
+``$ source $CONDA_DIR/bin/activate openradar``
+
+
 32-bit vs. 64-bit
 -----------------
 
-If you are working on a 32-bit OS, you should install a 32-bit VM image.
-
-If you are working on a 64-bit OS, you should install a 64-bit VM image.
+We do no longer support 32-bit environments. If you have a 32-bit host environment,
+the 64-bit will fail. That applies both for the :doc:`image downloads <downloads>`
+and for :doc:`builts from source <build>`. Still, you might find some guidance :doc:`here <build>`
+on how to build a 32-bit image yourself. 
 
 When you import the image to VirtualBox, check the ``Appliance Settings``:
-For the 32bit image, make sure that *"Guest OS Type"* is "Ubuntu (32bit)", 
-otherwise choose "Ubuntu (64bit)".
-
-**Try the 32-bit image when import or booting of the 64-bit appliance fails (and vice versa).**
+Make sure that *"Guest OS Type"* is "Debain (64bit)".
 
 
 Enabling virtualization
@@ -65,6 +92,7 @@ hosts. The way how to enable virtualization support depends on the system. Pleas
 `this article <http://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/>`_
 on how the issue might be adressed on Windows hosts - usually you need to change the
 BIOS settings to enable virtualization support.
+
 
 Cleaning up after removing a VM
 -------------------------------
