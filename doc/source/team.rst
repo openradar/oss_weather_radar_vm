@@ -18,7 +18,9 @@ Team Py-ART
 
 Scott Collis (Argonne National Laboratory, USA)
 
-Jonathan J. Helmus (Argonne National Laboratory, USA)
+Zach Sherman (Argonne National Laboratory, USA)
+
+Bobby Jackson (Argonne National Laboratory, USA)
 
 
 Team wradlib

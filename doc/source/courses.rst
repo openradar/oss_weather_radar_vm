@@ -1,25 +1,21 @@
 Courses
 =======
 
-The course materials available so far are mainly based on the
-`Open Source Radar Short Course <https://github.com/openradar/open_source_radar_short_course>`_
-which was carried out at the `ERAD 2014 <http://www.pa.op.dlr.de/erad2014/>`_ for the very first time.
+The VM combines various software packages, course materials and sample data.
 
-The courses are based on the `IPython notebook <http://ipython.org/notebook.html>`_. 
+The courses are based on `IPython notebook <https://jupyter.org/>`_.
+The material has been evolving since the very first "Open Source Radar Short Course" at
+`ERAD 2014 <http://www.pa.op.dlr.de/erad2014/>`_. Since then, several courses
+have been carried out at ERAD and AMS meeting as well as other occasions.
 
-Once you have logged into the VM, run the command 
+See :doc:`here <quickstart>` how to start a ``jupyter`` server and access the course material on the VM.
 
-``$ ./start_notebook.sh``.
+You can also access the repositories with course materials directly:
 
-Then open a browser window on your host machine and navigate to http://127.0.0.1:8888/tree. 
-From here, you can browse through the available IPython notebooks.
-
-You can also access the course repositories directly:
-
-* `Py-ART course <https://github.com/openradar/pyart_short_course>`_
-* `wradlib course <http://wradlib_short_course.bitbucket.org>`_
+* `Py-ART course <https://github.com/openradar/AMS-Short-Course-on-Open-Source-Radar-Software>`_
+* `wradlib course <https://github.com/wradlib/wradlib-notebooks>`_
 * `BALTRAD course <https://github.com/DanielMichelson/baltrad_short_course>`_
-* `BALTRAD 2 wradlib interoperability demo <https://github.com/heistermann/baltrad2wradlib>`_
+* `BALTRAD 2 wradlib interoperability demo <https://github.com/DanielMichelson/baltrad2wradlib>`_
 * `Py-ART 2 BALTRAD interoperability demo <https://github.com/jjhelmus/pyart2baltrad>`_
 * `Radx course <https://github.com/heistermann/radx_short_course>`_ *(as yet very brief)*
-* `PyTMatrix course <https://github.com/DaveOri/tmatrix_course.git>`_
+* `PyTMatrix course <https://github.com/DaveOri/tmatrix_course>`_
