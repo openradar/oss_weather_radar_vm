@@ -6,7 +6,7 @@ Towards Cross-Platform Weather Radar Science
 -------------------------------------------------------------
 
 In recent years, various Open Source Software (OSS) tools have become available 
-to the weather radar community (see `here <http://dx.doi.org/10.1175/BAMS-D-13-00240.1>`_).
+to the weather radar community (see `here <https://doi.org/10.1175/BAMS-D-13-00240.1>`_).
 
 On these pages, we present a Virtual Machine (VM) as a turn-key solution 
 to run and combine a number of weather radar software packages in a single environment: 
