@@ -83,6 +83,10 @@ Vagrant.configure("2") do |config|
   # Interoperability demo
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart2baltrad_course.sh"
 
+  # Intro to Python, Jupyter and Scipy
+
+  config.vm.provision :shell, :privileged => false, :path =>"provision_scripts/install_intro_notebooks.sh"
+
   # copy VM scripts
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/copy_guest_scripts.sh"
 
