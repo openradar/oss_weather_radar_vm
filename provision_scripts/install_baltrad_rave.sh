@@ -10,7 +10,6 @@ set -x
 #sudo apt-get install -qq libproj-dev
 sudo apt-get install -qq expat
 sudo apt-get install -qq libexpat-dev
-sudo apt-get install -qq libpython2.7-dbg
 
 export LD_LIBRARY_PATH=/opt/baltrad/hlhdf/lib
 
@@ -25,10 +24,10 @@ cd rave
 sed -i -e 's/import jprops/#import jprops/g' Lib/rave_bdb.py
 sed -i -e 's/import jprops/#import jprops/g' Lib/rave_dom_db.py
 sed -i -e 's/from keyczar import keyczar/#from keyczar import keyczar/g' Lib/BaltradFrame.py
-./configure --prefix=/opt/baltrad/rave --with-hlhdf=/opt/baltrad/hlhdf --with-proj=/usr/include,/usr/lib/x86_64-linux-gnu --with-expat=/usr/include,/usr/lib/x86_64-linux-gnu --with-bufr=/opt/baltrad/bbufr --with-numpy=/usr/lib/python2.7/dist-packages/numpy/core/include/numpy/ --with-netcdf=/usr/include,/usr/lib/x86_64-linux-gnu
+./configure --prefix=/opt/baltrad/rave --with-hlhdf=/opt/baltrad/hlhdf --with-proj=/usr/include,/usr/lib/x86_64-linux-gnu --with-expat=/usr/include,/usr/lib/x86_64-linux-gnu --with-numpy=/usr/lib/python3/dist-packages/numpy/core/include/numpy/ --with-netcdf=/usr/include,/usr/lib/x86_64-linux-gnu --enable-py3support
 make
 make test
-make install
+sudo make install
 
 grep -l rave ~/.bashrc
 if [ $? == 1 ] ;

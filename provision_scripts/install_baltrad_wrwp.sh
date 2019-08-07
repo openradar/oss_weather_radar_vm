@@ -19,7 +19,7 @@ sudo cp librave/toolbox/*.h /opt/baltrad/rave/include/
 
 # HACK we need .../rave/tmp to exist
 sudo mkdir /opt/baltrad/rave/tmp
-chown vagrant:vagrant /opt/baltrad/rave/tmp
+sudo chown vagrant:vagrant /opt/baltrad/rave/tmp
 
 # install baltrad_wrwp from source
 cd ~
@@ -29,7 +29,7 @@ cd baltrad-wrwp/
 ./configure --prefix=/opt/baltrad/baltrad-wrwp --with-rave=/opt/baltrad/rave --with-blas=/usr/lib --with-cblas=/usr/lib --with-lapack=/usr/lib --with-lapacke=/usr/include,/usr/lib
 make
 make test
-make install
+sudo make install
 
 grep -l wrwp ~/.bashrc
 if [ $? == 1 ] ;
@@ -37,4 +37,5 @@ then
 echo "export PATH=\"\$PATH:/opt/baltrad/baltrad-wrwp/bin\"" >> ~/.bashrc;
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/baltrad-wrwp/lib\"" >> ~/.bashrc;
 fi
-echo /opt/baltrad/baltrad-wrwp/share/wrwp/pywrwp/ > /usr/lib/python2.7/site-packages/baltrad_wrwp.pth
+echo /opt/baltrad/baltrad-wrwp/share/wrwp/pywrwp/ > baltrad_wrwp.pth
+sudo mv baltrad_wrwp.pth /usr/lib/python3/dist-packages/baltrad_wrwp.pth

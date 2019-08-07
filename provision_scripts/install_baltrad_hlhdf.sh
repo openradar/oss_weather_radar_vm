@@ -26,10 +26,11 @@ cd hlhdf/
 # for Ubuntu 14.04, the location is /usr/lib/x86_64-linux-gnu/
 # for Ubuntu 16.04, the location is /usr/lib/x86_64-linux-gnu/hdf5/serial/ (might be different on your system)
 
-./configure --prefix=/opt/baltrad/hlhdf --with-hdf5=/usr/include/hdf5/serial,/usr/lib/x86_64-linux-gnu/hdf5/serial
+./configure --prefix=/opt/baltrad/hlhdf --with-hdf5=/usr/include/hdf5/serial,/usr/lib/x86_64-linux-gnu/hdf5/serial --enable-py3support
 make
 make test
-make install
+sudo make install
+sudo mv /opt/baltrad/hlhdf/hlhdf.pth /usr/lib/python3/dist-packages/hlhdf.pth
 
 grep -l hlhdf ~/.bashrc
 if [ $? == 1 ] ;
