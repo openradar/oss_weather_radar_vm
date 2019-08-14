@@ -4,8 +4,8 @@ set -x
 # Vagrant provision script for installing BALTRAD bropo component
 
 # dependencies
-sudo apt-get install -qq libpng-dev
-export LD_LIBRARY_PATH=/opt/baltrad/hlhdf/lib:/opt/baltrad/rave/lib
+#sudo apt-get install -qq libpng-dev
+export LD_LIBRARY_PATH=/home/vagrant/miniconda/envs/openradar/lib:/home/vagrant/miniconda/envs/openradar/hlhdf/lib:/home/vagrant/miniconda/envs/openradar/rave/lib
 
 # install bropo from source
 cd ~
@@ -15,7 +15,10 @@ fi
 cd tmp
 git clone --depth 1 git://git.baltrad.eu/bropo.git
 cd bropo/
-./configure --prefix=/opt/baltrad/bropo --with-rave=/opt/baltrad/rave
+
+source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/
+
+./configure --prefix=/home/vagrant/miniconda/envs/openradar/bropo --with-rave=/home/vagrant/miniconda/envs/openradar/rave --with-png=/home/vagrant/miniconda/envs/openradar
 make
 make test
 make install
@@ -23,10 +26,10 @@ make install
 grep -l bropo ~/.bashrc
 if [ $? == 1 ] ;
 then 
-echo "export PATH=\"\$PATH:/opt/baltrad/bropo/bin\"" >> ~/.bashrc;
-echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/bropo/lib\"" >> ~/.bashrc;
+echo "export PATH=\"\$PATH:/home/vagrant/miniconda/envs/openradar/bropo/bin\"" >> ~/.bashrc;
+echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/home/vagrant/miniconda/envs/openradar/bropo/lib\"" >> ~/.bashrc;
 fi
-grep -l ropo_quality_plugin /opt/baltrad/rave/etc/rave_pgf_quality_registry.xml
+grep -l ropo_quality_plugin /home/vagrant/miniconda/envs/openradar/rave/etc/rave_pgf_quality_registry.xml
 if [ $? == 1 ] ;
-then sed -i 's/<\/rave-pgf-quality-registry>/  <quality-plugin name="ropo" module="ropo_quality_plugin" class="ropo_quality_plugin"\/>\n<\/rave-pgf-quality-registry>/g' /opt/baltrad/rave/etc/rave_pgf_quality_registry.xml;
+then sed -i 's/<\/rave-pgf-quality-registry>/  <quality-plugin name="ropo" module="ropo_quality_plugin" class="ropo_quality_plugin"\/>\n<\/rave-pgf-quality-registry>/g' /home/vagrant/miniconda/envs/openradar/rave/etc/rave_pgf_quality_registry.xml;
 fi

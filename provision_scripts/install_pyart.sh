@@ -6,16 +6,16 @@ set -x
 # dependencies
 ##sudo apt-get install -qq libfontconfig1 --> moved to install_common.sh 
 ##sudo apt-get install -qq gfortran               # for Steiner echo-class --> moved to install_common.sh
-sudo apt-get install -qq python-mpltoolkits.basemap
+#sudo apt-get install -qq python-mpltoolkits.basemap
 
 # Install Py-ART version 1.9.1 from source to system Python.
-cd ~
-mkdir tmp
-cd tmp
-wget https://github.com/ARM-DOE/pyart/releases/download/v1.9.1-picasso/arm_pyart-1.9.1.tar.gz
-tar xf arm_pyart-1.9.1.tar.gz
-cd arm_pyart-1.9.1/
-sudo python setup.py install
+#cd ~
+#mkdir tmp
+#cd tmp
+#wget https://github.com/ARM-DOE/pyart/releases/download/v1.9.1-picasso/arm_pyart-1.9.1.tar.gz
+#tar xf arm_pyart-1.9.1.tar.gz
+#cd arm_pyart-1.9.1/
+#sudo $CONDA_DIR/bin/python setup.py install
 
 # and install to conda env
 source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/ && \

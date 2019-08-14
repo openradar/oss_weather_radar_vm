@@ -13,31 +13,20 @@ fi
 cd tmp
 git clone --depth=1 git://git.baltrad.eu/hlhdf.git
 cd hlhdf/
-# configure hlhdf
-# we need to point to the location of the hdf5 headers and binaries
-# find out where the headers live on your system with
-# $ locate hdf5.h
-# for Ubuntu 14.04, the location is /usr/include/
-# for Ubuntu 16.04, the location is /usr/include/hdf5/serial (might be different on your system)
-#
-# and the same for the binaries:
-# $ locate libhdf5.a
-# $ locate libhdf5.so
-# for Ubuntu 14.04, the location is /usr/lib/x86_64-linux-gnu/
-# for Ubuntu 16.04, the location is /usr/lib/x86_64-linux-gnu/hdf5/serial/ (might be different on your system)
 
-./configure --prefix=/opt/baltrad/hlhdf --with-hdf5=/usr/include/hdf5/serial,/usr/lib/x86_64-linux-gnu/hdf5/serial --enable-py3support
+source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/ && \
+    $CONDA_DIR/bin/conda install -c conda-forge --yes make
+
+# Below is for Debian 9.2.0 and its conda with Python 3.6
+./configure --prefix=/home/vagrant/miniconda/envs/openradar/hlhdf --with-hdf5=/home/vagrant/miniconda/envs/openradar/include,/home/vagrant/miniconda/envs/openradar/lib --enable-py3support --with-py3bin=/home/vagrant/miniconda/envs/openradar/bin/python3 --with-numpy=/home/vagrant/miniconda/envs/openradar/lib/python3.6/site-packages/numpy/core/include/numpy/
 make
 make test
-sudo make install
-sudo mv /opt/baltrad/hlhdf/hlhdf.pth /usr/lib/python3/dist-packages/hlhdf.pth
+make install
+mv /home/vagrant/miniconda/envs/openradar/hlhdf/hlhdf.pth /home/vagrant/miniconda/envs/openradar/lib/python3.6/site-packages/.
 
 grep -l hlhdf ~/.bashrc
 if [ $? == 1 ] ;
 then 
-echo "export PATH=\"\$PATH:/opt/baltrad/hlhdf/bin\"" >> ~/.bashrc;
-echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/hlhdf/lib\"" >> ~/.bashrc;
+echo "export PATH=\"\$PATH:/home/vagrant/miniconda/envs/openradar/hlhdf/bin\"" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/home/vagrant/miniconda/envs/openradar/lib:/home/vagrant/miniconda/envs/openradar/hlhdf/lib\"" >> ~/.bashrc;
 fi
-
-# HACK, I believe this should be done during make install
-sudo cp /opt/baltrad/hlhdf/hlhdf.pth /usr/lib/python2.7/dist-packages/

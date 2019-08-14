@@ -48,10 +48,10 @@ Vagrant.configure("2") do |config|
   # Requirements not related to Python or a specific package
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_common.sh"
   
-  # Python environment (system, not conda)
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
+  # Python2 environment (system, not conda)
+#retired#  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
   
-  # Python environment (conda)
+  # Python3 environment (conda)
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_conda.sh"
   
   # wradlib to conda
@@ -62,20 +62,20 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart_notebooks.sh"
   
   # BALTRAD
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
+#retired#  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_hlhdf.sh"
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bbufr.sh"
+#retired#  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bbufr.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave.sh"  
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_beamb.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bropo.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_wrwp.sh"
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_finalize.sh"
+#retired#  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_finalize.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_short_course.sh"
   
   # Radx
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx.sh"
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx_short_course.sh"
+## config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx.sh"
+##  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx_short_course.sh"
 
   # PyTMatrix to system Python and conda
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pytmatrix.sh"
@@ -92,6 +92,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/copy_guest_scripts.sh"
 
   # cleanup
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cleanup.sh" 
+##  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cleanup.sh" 
 
 end

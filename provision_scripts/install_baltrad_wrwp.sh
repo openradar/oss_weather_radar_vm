@@ -3,8 +3,8 @@ set -x
 
 # Vagrant provision script for installing BALTRAD wrwp from source
 
-# install dependencies
-export LD_LIBRARY_PATH=/opt/baltrad/hlhdf/lib:/opt/baltrad/rave/lib
+# Install system dependencies, not conda in this case
+export LD_LIBRARY_PATH=/home/vagrant/miniconda/envs/openradar/lib:/home/vagrant/miniconda/envs/openradar/hlhdf/lib:/home/vagrant/miniconda/envs/openradar/rave/lib
 sudo apt-get install -qq libatlas-base-dev
 sudo apt-get install -qq liblapacke-dev
 
@@ -14,28 +14,27 @@ if ! [ -d tmp ]; then
 mkdir tmp
 fi
 cd tmp
-cd rave
-sudo cp librave/toolbox/*.h /opt/baltrad/rave/include/
 
 # HACK we need .../rave/tmp to exist
-sudo mkdir /opt/baltrad/rave/tmp
-sudo chown vagrant:vagrant /opt/baltrad/rave/tmp
+mkdir /home/vagrant/miniconda/envs/openradar/rave/tmp
+chown vagrant:vagrant /home/vagrant/miniconda/envs/openradar/rave/tmp
 
 # install baltrad_wrwp from source
 cd ~
 cd tmp
 git clone --depth 1 git://git.baltrad.eu/baltrad-wrwp.git
 cd baltrad-wrwp/
-./configure --prefix=/opt/baltrad/baltrad-wrwp --with-rave=/opt/baltrad/rave --with-blas=/usr/lib --with-cblas=/usr/lib --with-lapack=/usr/lib --with-lapacke=/usr/include,/usr/lib
+
+source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/
+
+./configure --prefix=/home/vagrant/miniconda/envs/openradar/baltrad-wrwp --with-rave=/home/vagrant/miniconda/envs/openradar/rave --with-blas=/usr/lib --with-cblas=/usr/lib --with-lapack=/usr/lib --with-lapacke=/usr/include,/usr/lib
 make
 make test
-sudo make install
+make install
 
 grep -l wrwp ~/.bashrc
 if [ $? == 1 ] ;
 then 
-echo "export PATH=\"\$PATH:/opt/baltrad/baltrad-wrwp/bin\"" >> ~/.bashrc;
-echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/baltrad-wrwp/lib\"" >> ~/.bashrc;
+echo "export PATH=\"\$PATH:/home/vagrant/miniconda/envs/openradar/baltrad-wrwp/bin\"" >> ~/.bashrc;
+echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/home/vagrant/miniconda/envs/openradar/baltrad-wrwp/lib\"" >> ~/.bashrc;
 fi
-echo /opt/baltrad/baltrad-wrwp/share/wrwp/pywrwp/ > baltrad_wrwp.pth
-sudo mv baltrad_wrwp.pth /usr/lib/python3/dist-packages/baltrad_wrwp.pth
