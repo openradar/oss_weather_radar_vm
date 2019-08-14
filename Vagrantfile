@@ -92,6 +92,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/copy_guest_scripts.sh"
 
   # cleanup
-##  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cleanup.sh" 
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/cleanup.sh" 
 
 end

@@ -3,7 +3,7 @@ set -x
 
 # Vagrant provision script for installing BALTRAD HL-HDF component
 
-# Install hlhdf depencies
+# Install hlhdf depencies + removed because they are now in conda
 
 # Install hlhdf from source
 cd ~
