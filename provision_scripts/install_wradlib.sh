@@ -5,7 +5,7 @@ set -x
 
 # Install wradlib runtime dependencies
 source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/ && \
-    $CONDA_DIR/bin/conda install -c conda-forge --yes gdal numpy scipy matplotlib netcdf4 h5py xmltodict notebook
+    $CONDA_DIR/bin/conda install -c conda-forge --yes proj4=5.2.0 gdal numpy scipy matplotlib netcdf4 h5py xmltodict notebook
 
 # Install wradlib
 cd ~

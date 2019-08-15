@@ -8,9 +8,8 @@ Vagrant.configure("2") do |config|
     config.cache.scope = :box
   end
   
-  config.vm.box = "debian/stretch64"
-#  config.vm.box_version = "9.3.0"
-  config.vm.box_url = "https://vagrantcloud.com/debian/boxes/stretch64/versions/9.2.0/providers/virtualbox.box"
+  config.vm.box = "debian/buster64"
+  config.vm.box_url = "https://vagrantcloud.com/debian/boxes/buster64/versions/10.0.0/providers/virtualbox.box"
   # The .box file can also be specified as a file on the local machine,
   # comment the above config.vm.box line, uncomment and edit the next line.
 #  config.vm.box_url = "file:///Users/baltrad/Desktop/stretch64_9.2.0_virtualbox.box"

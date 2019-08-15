@@ -12,13 +12,11 @@ sudo cp /vagrant/vendor/etc/apache2/apache2.conf /etc/apache2/apache2.conf
 sudo cp /vagrant/vendor/etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 sudo service apache2 restart
 
-source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/ && \
-    conda install -c conda-forge --yes pillow
-
 # install GoogleMapsPlugin from source
 cd ~/tmp
 git clone --depth=1 git://git.baltrad.eu/GoogleMapsPlugin.git
 cd GoogleMapsPlugin/
+source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/
 python setup.py install --prefix=/home/vagrant/miniconda/envs/openradar
 # Replace Google Maps with OpenStreetMap
 cp web/index.html /home/vagrant/miniconda/envs/openradar/rave_gmap/web/.
