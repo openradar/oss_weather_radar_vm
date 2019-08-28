@@ -10,7 +10,6 @@ sudo apt-get install -qq php
 sudo apt-get install -qq libapache2-mod-php
 sudo cp /vagrant/vendor/etc/apache2/apache2.conf /etc/apache2/apache2.conf
 sudo cp /vagrant/vendor/etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf
-sudo service apache2 restart
 
 # install GoogleMapsPlugin from source
 cd ~/tmp
@@ -35,3 +34,6 @@ cp /vagrant/vendor/opt/baltrad/rave_gmap/web/data/cawkr_gmaps.tgz $CONDA_PREFIX/
 cd $CONDA_PREFIX/rave_gmap/web/data
 tar xzf cawkr_gmaps.tgz
 rm cawkr_gmaps.tgz
+
+# Restart apache2 with the plugin contents
+sudo service apache2 restart

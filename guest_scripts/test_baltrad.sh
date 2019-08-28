@@ -1,3 +1,4 @@
+source $CONDA_DIR/bin/activate $RADARENV
 python -c "import _pyhl"                    # hlhdf
 python -c "import rave"                     # rave
 python -c "import beamb_quality_plugin"     # beamb
