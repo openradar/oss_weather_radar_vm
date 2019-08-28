@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  
+
   # Configure cached packages to be shared between instances of the same base box.
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
@@ -17,23 +17,7 @@ Vagrant.configure("2") do |config|
   # configure VM instance
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
-  end  
- 
-  # A 32-bit VM can also be create, comment out the above block and
-  # uncomment this block
-  #config.vm.box = "trusty32"
-  #config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box"
-  # configure VM instance
-  #config.vm.provider "virtualbox" do |vb|
-  #  vb.customize ["modifyvm", :id, "--hwvirtex", "off"]
-  #  vb.customize ["modifyvm", :id, "--memory", "2048"]
-  #  ## You might need to uncomment the following if built times out after "default: SSH auth method: private key"
-  #  ## Change network card to PCnet-FAST III 
-  #  ## For NAT adapter
-  #  #vb.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
-  #  ## For host-only adapter
-  #  #vb.customize ["modifyvm", :id, "--nictype2", "Am79C973"]
-  #end 
+  end
 
   # Forward the default Jupyter port
   config.vm.network "forwarded_port", guest: 8888, host: 8888
@@ -43,40 +27,35 @@ Vagrant.configure("2") do |config|
   config.ssh.forward_agent = true
   
   # Provision machine with open source radar software.
-  
+
   # Requirements not related to Python or a specific package
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_common.sh"
   
-  # Python2 environment (system, not conda)
-#retired#  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_scipy_stack.sh"
-  
   # Python3 environment (conda)
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_conda.sh"
-  
-  # wradlib to conda
+
+  # wradlib to conda (incl. jupyter and other major dependencies)
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_wradlib.sh"
   
-  # Py-ART to system Python and conda
+  ## Py-ART to conda
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart_notebooks.sh"
   
-  # BALTRAD
-#retired#  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_common.sh"
+  # BALTRAD to conda
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_hlhdf.sh"
-#retired#  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bbufr.sh"
-  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave.sh"  
+  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_beamb.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_bropo.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_rave_gmap.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_wrwp.sh"
-#retired#  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_finalize.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_baltrad_short_course.sh"
   
   # Radx
-## config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx.sh"
-##  config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx_short_course.sh"
+  # not python 3 ready
+  # config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx.sh"
+  # config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_radx_short_course.sh"
 
-  # PyTMatrix to system Python and conda
+  # PyTMatrix to conda
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pytmatrix.sh"
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pytmatrix_short_course.sh"
   
@@ -84,7 +63,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :privileged => false, :path => "provision_scripts/install_pyart2baltrad_course.sh"
 
   # Intro to Python, Jupyter and Scipy
-
   config.vm.provision :shell, :privileged => false, :path =>"provision_scripts/install_intro_notebooks.sh"
 
   # copy VM scripts

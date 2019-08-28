@@ -16,22 +16,22 @@ sudo service apache2 restart
 cd ~/tmp
 git clone --depth=1 git://git.baltrad.eu/GoogleMapsPlugin.git
 cd GoogleMapsPlugin/
-source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/
-python setup.py install --prefix=/home/vagrant/miniconda/envs/openradar
+source $CONDA_DIR/bin/activate $RADARENV
+python setup.py install --prefix=$CONDA_PREFIX
 # Replace Google Maps with OpenStreetMap
-cp web/index.html /home/vagrant/miniconda/envs/openradar/rave_gmap/web/.
-rm /home/vagrant/miniconda/envs/openradar/rave_gmap/web/index.php
+cp web/index.html $CONDA_PREFIX/rave_gmap/web/.
+rm $CONDA_PREFIX/rave_gmap/web/index.php
 
 # HACK the setup.py files need to add the line
 # import distutils.sysconfig
 # The .pth file is not copied because of this, manually create the file
-echo /home/vagrant/miniconda/envs/openradar/rave_gmap/Lib/ > /home/vagrant/miniconda/envs/openradar/lib/python3.6/site-packages/rave_gmap.pth
+echo $CONDA_PREFIX/rave_gmap/Lib/ > $CONDA_PREFIX/lib/python3.6/site-packages/rave_gmap.pth
 
 # Add an amazing case!
-cp /vagrant/vendor/opt/baltrad/rave_gmap/web/smhi-areas.xml /home/vagrant/miniconda/envs/openradar/rave_gmap/web/.
-cp /vagrant/vendor/opt/baltrad/rave_gmap/web/products.js /home/vagrant/miniconda/envs/openradar/rave_gmap/web/.
-mkdir /home/vagrant/miniconda/envs/openradar/rave_gmap/web/data
-cp /vagrant/vendor/opt/baltrad/rave_gmap/web/data/cawkr_gmaps.tgz /home/vagrant/miniconda/envs/openradar/rave_gmap/web/data/.
-cd /home/vagrant/miniconda/envs/openradar/rave_gmap/web/data
+cp /vagrant/vendor/opt/baltrad/rave_gmap/web/smhi-areas.xml $CONDA_PREFIX/rave_gmap/web/.
+cp /vagrant/vendor/opt/baltrad/rave_gmap/web/products.js $CONDA_PREFIX/rave_gmap/web/.
+mkdir $CONDA_PREFIX/rave_gmap/web/data
+cp /vagrant/vendor/opt/baltrad/rave_gmap/web/data/cawkr_gmaps.tgz $CONDA_PREFIX/rave_gmap/web/data/.
+cd $CONDA_PREFIX/rave_gmap/web/data
 tar xzf cawkr_gmaps.tgz
 rm cawkr_gmaps.tgz
