@@ -4,8 +4,10 @@
 set -x
 # Get the Py-ART notebooks from GitHub.
 cd ~
-git clone https://github.com/EVS-ATMOS/pyart-notebooks.git pyart_short_course
+mkdir data
+git clone https://github.com/openradar/AMS-Open-Source-Radar-2019
+mv AMS-Open-Source-Radar-2019/pyart ~/
 
 # Retrieve the data for the Py-ART course. Adds ~0.7 GB to the VM size.
-cd pyart_short_course/data
-./provision_data.sh
+bash AMS-Open-Source-Radar-2019/binder/provision.sh
+rm -rf AMS-Open-Source-Radar-2019
