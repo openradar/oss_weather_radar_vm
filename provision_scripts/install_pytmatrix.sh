@@ -5,6 +5,6 @@ set -x
 #sudo pip install pytmatrix
 
 # PyTMatrix install in conda env
-source $CONDA_DIR/bin/activate $CONDA_DIR/envs/$RADARENV/ && \
-    pip install pytmatrix
+source $CONDA_DIR/bin/activate $RADARENV && \
+    conda install --yes pytmatrix
 
