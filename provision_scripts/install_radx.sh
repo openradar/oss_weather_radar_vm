@@ -37,11 +37,8 @@ VERSION=20160809
 ##############################################################################
 # Install from binaries
 ##############################################################################
+source $CONDA_DIR/bin/activate $RADARENV
 cd ~
-mkdir tmp
-cd tmp
-wget -q https://www.eol.ucar.edu/system/files/software/radx/64-bit-binary/radx-$VERSION.x86_64.tgz -O radx-$VERSION.x86_64.tgz
-tar xfz radx-$VERSION.x86_64.tgz
-rm radx-$VERSION.x86_64.tgz
-cd radx-$VERSION.x86_64
-sudo ./install_bin_release /usr/local
+git clone --depth=1 https://github.com/NCAR/lrose-core.git
+cd lrose-core/build
+python install_bin_release.py #--prefix /usr/local

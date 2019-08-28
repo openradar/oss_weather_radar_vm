@@ -3,40 +3,30 @@ set -x
 
 # Vagrant provision script for installing BALTRAD HL-HDF component
 
-# Install hlhdf depencies
-
-# Install hlhdf from source
+# Install hlhdf from source into conda env
 cd ~
-if ! [ -d tmp ]; then
-mkdir tmp
-fi
+if ![[ -d tmp ]]; then
+    mkdir tmp
+    fi
 cd tmp
 git clone --depth=1 git://git.baltrad.eu/hlhdf.git
 cd hlhdf/
-# configure hlhdf
-# we need to point to the location of the hdf5 headers and binaries
-# find out where the headers live on your system with
-# $ locate hdf5.h
-# for Ubuntu 14.04, the location is /usr/include/
-# for Ubuntu 16.04, the location is /usr/include/hdf5/serial (might be different on your system)
-#
-# and the same for the binaries:
-# $ locate libhdf5.a
-# $ locate libhdf5.so
-# for Ubuntu 14.04, the location is /usr/lib/x86_64-linux-gnu/
-# for Ubuntu 16.04, the location is /usr/lib/x86_64-linux-gnu/hdf5/serial/ (might be different on your system)
 
-./configure --prefix=/opt/baltrad/hlhdf --with-hdf5=/usr/include/hdf5/serial,/usr/lib/x86_64-linux-gnu/hdf5/serial
+source $CONDA_DIR/bin/activate $RADARENV
+conda install --yes make
+
+./configure --prefix=$CONDA_PREFIX/hlhdf \
+            --with-hdf5=$CONDA_PREFIX/include,$CONDA_PREFIX/lib \
+            --enable-py3support \
+            --with-py3bin=$CONDA_PREFIX/bin/python3 \
+            --with-numpy=$CONDA_PREFIX/lib/python3.6/site-packages/numpy/core/include/numpy/
 make
 make test
 make install
+mv $CONDA_PREFIX/hlhdf/hlhdf.pth $CONDA_PREFIX/lib/python3.6/site-packages/.
 
 grep -l hlhdf ~/.bashrc
-if [ $? == 1 ] ;
-then 
-echo "export PATH=\"\$PATH:/opt/baltrad/hlhdf/bin\"" >> ~/.bashrc;
-echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:/opt/baltrad/hlhdf/lib\"" >> ~/.bashrc;
+if [[ $? == 1 ]]; then
+    echo "export PATH=\"\$PATH:$CONDA_PREFIX/hlhdf/bin\"" >> ~/.bashrc
+    echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib\"" >> ~/.bashrc;
 fi
-
-# HACK, I believe this should be done during make install
-sudo cp /opt/baltrad/hlhdf/hlhdf.pth /usr/lib/python2.7/dist-packages/

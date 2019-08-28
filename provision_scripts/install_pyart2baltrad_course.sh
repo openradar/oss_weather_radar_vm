@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -x
 cd ~
-git clone --depth=1 https://github.com/jjhelmus/pyart2baltrad.git
+rm -rf pyart2baltrad
+git clone --depth=1 https://github.com/DanielMichelson/pyart2baltrad.git

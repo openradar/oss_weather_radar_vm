@@ -4,9 +4,6 @@
 set -x
 # Get the Py-ART notebooks from GitHub.
 cd ~
-# Install git and zip/unzip just in case.
-sudo apt-get install -qq git
-sudo apt-get install -qq zip unzip
 git clone https://github.com/EVS-ATMOS/pyart-notebooks.git pyart_short_course
 
 # Retrieve the data for the Py-ART course. Adds ~0.7 GB to the VM size.
