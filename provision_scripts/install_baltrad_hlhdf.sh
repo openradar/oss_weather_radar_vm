@@ -5,7 +5,7 @@ set -x
 
 # Install hlhdf from source into conda env
 cd ~
-if ![[ -d tmp ]]; then
+if [ ! -d tmp ]; then
     mkdir tmp
     fi
 cd tmp

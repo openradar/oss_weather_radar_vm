@@ -10,7 +10,7 @@ sudo apt-get install -qq liblapacke-dev
 
 # HACK some include files are not copied when RAVE is installed
 cd ~
-if ![[ -d tmp ]]; then
+if [ ! -d tmp ]; then
     mkdir tmp
 fi
 cd tmp

@@ -8,7 +8,7 @@ export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/r
 
 # install bropo from source
 cd ~
-if ! [[ -d tmp ]]; then
+if [ ! -d tmp ]; then
     mkdir tmp
 fi
 cd tmp
