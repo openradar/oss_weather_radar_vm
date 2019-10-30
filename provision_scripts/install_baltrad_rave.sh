@@ -7,7 +7,7 @@ export LD_LIBRARY_PATH=$CONDA_PREFIX/hlhdf/lib
 
 # Install RAVE from source
 cd ~
-if ! [[ -d tmp ]]; then
+if [ ! -d tmp ]; then
     mkdir tmp
 fi
 cd tmp

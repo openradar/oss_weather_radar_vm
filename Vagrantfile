@@ -23,6 +23,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8888, host: 8888
   # Forward the httpd port
   config.vm.network "forwarded_port", guest: 80, host: 8080
+  # Forward SSH port. Can be changed if you run multiple VMs
+  config.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh'
   
   config.ssh.forward_agent = true
   
